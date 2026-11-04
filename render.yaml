@@ -17,4 +17,4 @@ services:
         generateValue: true
       # 코어 웹, 어드민 주소 (Vercel)
       - key: FRONTEND_ORIGIN
-        value: https://kkoribyeol-web.vercel.app,https://kkoribyeol-admin.vercel.app
+        value: https://kkoribyeol-web-three.vercel.app,https://kkoribyeol-admin-ten.vercel.app
