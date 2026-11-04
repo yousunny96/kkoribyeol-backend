@@ -1,0 +1,20 @@
+# Render Blueprint: Render 대시보드 New → Blueprint 에서 이 저장소를 고르면 아래대로 만든다
+services:
+  - type: web
+    name: kkoribyeol-backend
+    runtime: node
+    plan: free
+    region: ohio # DB(fde-db)와 같은 지역
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    healthCheckPath: /health
+    envVars:
+      # Render PostgreSQL 외부 주소. 비밀값이라 저장소에 적지 않고 대시보드에서 직접 넣는다
+      - key: DATABASE_URL
+        sync: false
+      # 로그인 토큰 서명 키. Render가 무작위로 만들어 준다
+      - key: AUTH_SECRET
+        generateValue: true
+      # 코어 웹, 어드민 주소 (Vercel)
+      - key: FRONTEND_ORIGIN
+        value: https://kkoribyeol-web.vercel.app,https://kkoribyeol-admin.vercel.app
