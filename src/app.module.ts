@@ -7,6 +7,7 @@ import { HealthController } from './health.controller.js';
 import { PetsController } from './pets.controller.js';
 import { AdminReservationsController, CatalogController, ReservationsController } from './reservations.controller.js';
 import { ReservationsService } from './reservations.service.js';
+import { RulesController } from './rules.controller.js';
 import { StaffController } from './staff.controller.js';
 
 @Module({
@@ -18,6 +19,7 @@ import { StaffController } from './staff.controller.js';
     PetsController,
     ReservationsController,
     AdminReservationsController,
+    RulesController,
   ],
   providers: [DbService, AuthService, AuthGuard, ReservationsService],
 })
